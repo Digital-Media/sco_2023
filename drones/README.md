@@ -1,4 +1,4 @@
-# The Sky’s the Limit: Developing for Drones
+# The Sky's the Limit: Developing for Drones
 
 This repository contains the code for drone programming session of the Spatial Computing course at the University of Applied Sciences Upper Austria.
 
@@ -6,7 +6,7 @@ You will find a few examples of how to program a drone using Python and the Tell
 
 ## Installation
 ```python
-pip install simple_pid matplotlib opencv-python mediapipedjitellopy  opencv-contrib-python
+pip install simple_pid matplotlib opencv-python mediapipe djitellopy  opencv-contrib-python
 ```
 
 ### Acknowledgements
