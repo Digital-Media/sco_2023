@@ -68,8 +68,13 @@ class PoseEstimator:
             [marker_ids] if not isinstance(marker_ids, list) else marker_ids
         )
 
-        self.aruco_dict = cv2.aruco.Dictionary_get(self.aruco_dict_type)
-        self.parameters = cv2.aruco.DetectorParameters_create()
+        try:
+            self.aruco_dict = cv2.aruco.Dictionary_get(self.aruco_dict_type)
+            self.parameters = cv2.aruco.DetectorParameters_create()
+        except:
+            # try a newer version of opencv (see https://stackoverflow.com/questions/74964527/attributeerror-module-cv2-aruco-has-no-attribute-dictionary-get)
+            self.aruco_dict = cv2.aruco.getPredefinedDictionary(self.aruco_dict_type)
+            self.parameters = cv2.aruco.DetectorParameters()
 
     def detect(self, frame):
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -110,7 +115,7 @@ class PoseEstimator:
                     cv2.aruco.drawDetectedMarkers(frame, corners, ids)
 
                     # print the marker's position and attitude in the camera frame
-                    str_position = "MARKER Position x=%4.0f  y=%4.0f  z=%4.0f" % (
+                    str_position = "MARKER Position x=%4.1f  y=%4.1f  z=%4.1f" % (
                         marker_pos[0],
                         marker_pos[1],
                         marker_pos[2],
@@ -126,7 +131,7 @@ class PoseEstimator:
                         cv2.LINE_AA,
                     )
 
-                    str_attitude = "MARKER Attitude r=%4.0f  p=%4.0f  y=%4.0f" % (
+                    str_attitude = "MARKER Attitude r=%4.1f  p=%4.1f  y=%4.1f" % (
                         math.degrees(marker_euler[0]),
                         math.degrees(marker_euler[1]),
                         math.degrees(marker_euler[2]),
@@ -143,7 +148,7 @@ class PoseEstimator:
                     )
 
                     # print the camera's position and attitude in the marker' coordinate system
-                    str_position = "CAMERA Position x=%4.0f  y=%4.0f  z=%4.0f" % (
+                    str_position = "CAMERA Position x=%4.1f  y=%4.1f  z=%4.1f" % (
                         camera_pos[0],
                         camera_pos[1],
                         camera_pos[2],
@@ -159,7 +164,7 @@ class PoseEstimator:
                         cv2.LINE_AA,
                     )
 
-                    str_attitude = "CAMERA Attitude r=%4.0f  p=%4.0f  y=%4.0f" % (
+                    str_attitude = "CAMERA Attitude r=%4.1f  p=%4.1f  y=%4.1f" % (
                         math.degrees(camera_euler[0]),
                         math.degrees(camera_euler[1]),
                         math.degrees(camera_euler[2]),
@@ -197,7 +202,13 @@ if __name__ == "__main__":
         help="Path to calibration (xml file)",
         default="./calibrations/tello_e01_calibration.xml",
     )
-    ap.add_argument("-i", "--Image", required=False, help="Path to image file")
+    ap.add_argument(
+        "-i",
+        "--Image",
+        required=False,
+        help="Path to image file",
+        default="./images/aruco_4x4_0_z50cm_y10_image.jpg",
+    )
     ap.add_argument(
         "-s",
         "--MarkerSize",

@@ -120,11 +120,11 @@ if __name__ == "__main__":
         video = cv2.VideoCapture(0)
 
     while True:
-        if video:
+        if video is not None:
             ret, frame = video.read()
             if not ret:
                 break
-        elif image:
+        elif image is not None:
             frame = image.copy()
         else:
             print("No Video and no Image given")

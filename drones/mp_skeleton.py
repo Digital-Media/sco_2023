@@ -1,6 +1,6 @@
-"""An object detector using Google's MediaPipe framework 
+"""A skeleton detector using Google's MediaPipe framework 
 
-https://developers.google.com/mediapipe/solutions/vision/object_detector#models
+https://developers.google.com/mediapipe/solutions/vision/pose_landmarker
 """
 
 import cv2
