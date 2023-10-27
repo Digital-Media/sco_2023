@@ -9,3 +9,7 @@ Repository for the Spatial Computing Course of the Winter Semester 2023/24
 * Recipes will be graded on their overall quality and accuracy
 * Content will be public
 * Due date: January 26, 2024
+* available in the [wiki](../../wiki/)
+
+## Code or Handouts
+* [THE SKY’S THE LIMIT: DEVELOPING FOR DRONES](./drones)
