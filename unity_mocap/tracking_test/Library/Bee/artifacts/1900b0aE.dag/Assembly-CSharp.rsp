@@ -352,13 +352,14 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/CameraMovement.cs"
 "Assets/OptiTrack/Plugins/Managed/NatNetLib/Client.cs"
 "Assets/OptiTrack/Plugins/Managed/NatNetLib/Native.cs"
 "Assets/OptiTrack/Scripts/OptitrackRigidBody.cs"
 "Assets/OptiTrack/Scripts/OptitrackSkeletonAnimator.cs"
 "Assets/OptiTrack/Scripts/OptitrackStreamingClient.cs"
-"Assets/SphereSpawner.cs"
+"Assets/scripts/CameraMovement.cs"
+"Assets/scripts/FlyCamera.cs"
+"Assets/scripts/SphereSpawner.cs"
 -langversion:9.0
 
 /deterministic

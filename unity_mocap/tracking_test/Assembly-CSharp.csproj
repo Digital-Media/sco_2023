@@ -66,9 +66,10 @@
   <ItemGroup>
     <Compile Include="Assets\OptiTrack\Scripts\OptitrackStreamingClient.cs" />
     <Compile Include="Assets\OptiTrack\Plugins\Managed\NatNetLib\Native.cs" />
-    <Compile Include="Assets\CameraMovement.cs" />
+    <Compile Include="Assets\scripts\FlyCamera.cs" />
     <Compile Include="Assets\OptiTrack\Plugins\Managed\NatNetLib\Client.cs" />
-    <Compile Include="Assets\SphereSpawner.cs" />
+    <Compile Include="Assets\scripts\CameraMovement.cs" />
+    <Compile Include="Assets\scripts\SphereSpawner.cs" />
     <Compile Include="Assets\OptiTrack\Scripts\OptitrackRigidBody.cs" />
     <Compile Include="Assets\OptiTrack\Scripts\OptitrackSkeletonAnimator.cs" />
   </ItemGroup>
